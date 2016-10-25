@@ -1,3 +1,24 @@
 .reveal p.wow {
   font-size: 2em;
 }
+
+.refresh .fa-refresh {
+  position: relative;
+  top: -1.35em;
+  left: -2em;
+  z-index: -1;
+  color: gray;
+}
+
+.reveal section img.plain {
+  border: none;
+  background: none;
+}
+
+/*body {
+  background-color: #008542;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  color: #FFB612;
+}*/

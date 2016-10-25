@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- Theme used for syntax highlighting of code -->
@@ -27,28 +28,42 @@
       <div class="slides">
 
         <section>
-          <h1>Web Development Automation</h1>
+          <h1><i class="fa fa-fw fa-spin fa-cog"></i> Web Development Automation</h1>
           <hr>
           <p>Wun Chiou<br>Office of Research<br> Information Systems</p>
         </section>
 
         <section>
+          <img src="images/d1.gif" width="400" height="300">
+          <img src="images/d2.gif" width="480" height="300">
+        </section>
+
+        <section>
+          <h3>Set up a new website:</h3>
+          <ol>
+            <li class="fragment"><strong><i class="fa fa-fw fa-cloud-download"></i> Download</strong>: frameworks &amp; libraries</li>
+            <li class="fragment"><strong><i class="fa fa-fw fa-clone"></i> Copy</strong>: Set up folder structure; copy files into place</li>
+            <li class="fragment"><strong><i class="fa fa-fw fa-chrome"></i> View</strong>: Load in browser</li>
+            <li class="fragment"><strong><i class="fa fa-fw fa-pencil"></i> Edit</strong>: make changes</li>
+            <li class="fragment"><strong><i class="fa fa-fw fa-wrench"></i> Compile</strong>: Sass/Less, ES6, etc.</li>
+            <li class="fragment"><strong><i class="fa fa-fw fa-chrome"></i> Test</strong>: Reload browser</li>
+          </ol>
+          <p class="refresh fragment"><i class="fa fa-3x fa-spin fa-fw fa-refresh"></i></p>
+        </section>
+
+        <section>
           <h3>Some web development tasks we can automate:</h3>
           <ul>
-            <li class="fragment">CSS pre-processing (LESS, SASS)</li>
-            <li class="fragment">JS pre-processing (ES6, TypeScript)</li>
-            <li class="fragment">Minification</li>
-            <li class="fragment">Linting</li>
-            <li class="fragment">HTML template compilation</li>
-            <li class="fragment">File copying</li>
-            <li class="fragment">Browser reloading</li>
             <li class="fragment">Dependency installation</li>
-            <li class="fragment">Asset loading</li>
+            <li class="fragment">File copying</li>
+            <li class="fragment">JS/CSS concatenation</li>
+            <li class="fragment">JS/CSS minifying</li>
+            <li class="fragment">Browser reloading</li>
           </ul>
         </section>
 
         <section>
-          <h3>Types of Tools</h3>
+          <h3><i class="fa fa-wrench"></i> Types of Tools</h3>
           <section>
             <h4>Package Managers</h4>
             <hr>
@@ -67,14 +82,19 @@
             <p>Grunt</p>
             <p>Gulp</p>
           </section>
+          <section>
+            <small><a href="https://stateofjs.com" title="">stateofjs.com (2016 survey)</a></small><br>
+            <img src="images/gulp-popularity.png" alt="gulp popularity">
+          </section>
         </section>
 
         <section>
+          <img src="images/gulp.png" class="plain">
           <p>Let's get to it!</p>
         </section>
 
         <section>
-          <h3>Installing the tools we need:</h3>
+          <h3><i class="fa fa-fw fa-terminal"></i> Installing the tools we need:</h3>
           <ul>
             <li>NPM (installers for Windows, Mac, Linux)</li>
             <li>Gulp
@@ -86,7 +106,7 @@
 
         <!-- COPY -->
         <section>
-          <h3>gulp.task('copy')</h3>
+          <h3><i class="fa fa-fw fa-check-square-o"></i> gulp.task('copy')</h3>
           <section>
             <p>Download jQuery</p>
             <hr>
@@ -112,10 +132,10 @@ gulp.task('copy', function() {
 
         <!-- CONCATENATE -->
         <section>
-          <h3>gulp.task('concatenate')</h3>
+          <h3><i class="fa fa-fw fa-check-square-o"></i> gulp.task('concatenate')</h3>
           <section>
             <p>Download gulp-concat</p>
-            <pre><code class="sh">npm install --save gulp-concat</code></pre>
+            <pre><code class="sh">npm install --save-dev gulp-concat</code></pre>
           </section>
           <section>
             <p>Copy it to our js folder</p>
@@ -141,10 +161,10 @@ gulp.task('concatenate', function() {
 
         <!-- MINIFY -->
         <section>
-          <h3>gulp.task('minify')</h3>
+          <h3><i class="fa fa-fw fa-check-square-o"></i> gulp.task('minify')</h3>
           <section>
             <p>Download gulp-uglify</p>
-            <pre><code class="sh">npm install --save gulp-uglify</code></pre>
+            <pre><code class="sh">npm install --save-dev gulp-uglify</code></pre>
           </section>
           <section>
             <p>Define the task</p>
@@ -165,7 +185,7 @@ gulp.task('minify', function() {
 
         <!-- CONCATENATE + MINIFY -->
         <section>
-          <h3>gulp.task('concatify')</h3>
+          <h3><i class="fa fa-fw fa-check-square-o"></i><i class="fa fa-fw fa-plus"></i><i class="fa fa-fw fa-check-square-o"></i> gulp.task('concatify')</h3>
           <section>
             <p>Gulp is a "stream" task runner.</p>
             <p>You can pipe multiple tasks in together.</p>
@@ -196,6 +216,96 @@ gulp.task('concatify', function() {
           </section>
         </section>
 
+        <section>
+          <h3>Need more automatic!</h3>
+          <p><small>(Make the droids do the work)</small></p>
+          <img src="images/d3.gif" alt="">
+        </section>
+
+        <!-- WATCH -->
+        <section>
+          <h3><i class="fa fa-fw fa-eye"></i> gulp.watch()</h3>
+          <section>
+            <p>Watch for file changes and automatically run a task</p>
+          </section>
+          <section>
+            <p>Define the task</p>
+<pre><code data-trim class="js">
+gulp.task('watch', function() {
+     gulp.watch(['js/**/*.js', '!js/all.js'], ['concatify']); 
+});
+</code></pre>
+            <p>Then, run the task with</p>
+            <pre><code class="sh">gulp watch</code></pre>
+          </section>
+        </section>
+
+        <!-- NOTIFY & RELOAD -->
+        <section>
+          <h3><i class="fa fa-fw fa-refresh"></i> Reload &amp; <i class="fa fa-fw fa-bullhorn"></i> Notify</h3>
+          <section>
+            <p>Download gulp-notify</p>
+            <pre><code class="sh">npm install --save-dev gulp-notify</code></pre>
+            <p>Download browser-sync</p>
+            <pre><code class="sh">npm install --save-dev browser-sync</code></pre>
+          </section>
+          <section>
+          <p>Send a system notification when the task completes</p>
+<pre><code data-trim class="js">
+var notify = require('gulp-notify');
+
+gulp.task('concatify', function() {
+  gulp.src([
+        'lib/js/head.min.js',
+        'js/reveal.js',
+        'js/jquery.min.js',
+        'js/custom.js'
+      ])
+      .pipe(concat('all.js'))
+      .pipe(minify())
+      .pipe(gulp.dest('js'))
+      .pipe(notify('JS Concatified!'));
+});
+</code></pre>
+          </section>
+          <section>
+          <p>Serve the site &amp; auto-reload the browser when files change</p>
+<pre><code data-trim class="js">
+gulp.task('browsersync', function() {
+    browserSync.init({
+        server: {baseDir: "./"}
+    });
+});
+
+gulp.task('serve', ['browsersync'], function () {
+  gulp.watch(['js/**/*.js', '!js/all.js'], ['concatify']); 
+  gulp.watch([
+    'js/**/*.js', '!js/all.js',
+    '**/*.html', 'css/**/*.css',
+    ]).on('change', browserSync.reload);
+});
+</code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h3>Some other web development tasks we can automate:</h3>
+          <ul>
+            <li class="fragment">CSS pre-processing (LESS, SASS)</li>
+            <li class="fragment">JS pre-processing (ES6, TypeScript)</li>
+            <li class="fragment">CSS vendor auto-prefixer (-webkit-, -moz-)</li>
+            <li class="fragment">Linting</li>
+            <li class="fragment">Image optimizing</li>
+            <li class="fragment">HTML template compilation</li>
+            <li class="fragment">Asset loading</li>
+          </ul>
+        </section>
+
+        <section>
+          <img src="images/k1.gif" width="480" height="270">
+          <p>Contact</p>
+          <p>wun@utdallas.edu</p>
+        </section>
 
       </div>
     </div>

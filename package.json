@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Presentation on automating web dev tasks with gulp",
   "homepage": "https://research.utdallas.edu/oris",
+  "license": "MIT",
   "author": {
     "name": "Wun Chiou",
     "email": "wun@utdallas.edu",
@@ -12,7 +13,14 @@
     "type": "git",
     "url": "git://github.com/wunc/gulp-presentation.git"
   },
-  "devDependencies": {
+  "dependencies": {
+    "jquery": "^3.1.1"
   },
-  "license": "MIT"
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-uglify": "^2.0.0"
+  }
 }
