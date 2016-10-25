@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/custom.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -83,6 +84,119 @@
           </ul>
         </section>
 
+        <!-- COPY -->
+        <section>
+          <h3>gulp.task('copy')</h3>
+          <section>
+            <p>Download jQuery</p>
+            <hr>
+            <pre><code class="sh">npm install --save jquery</code></pre>
+          </section>
+          <section>
+            <p>Copy it to our js folder</p>
+            <hr>
+            <p>Make a gulpfile.js</p>
+<pre><code data-trim class="js">
+var gulp = require('gulp');
+
+gulp.task('copy', function() {
+  gulp.src('node_modules/jquery/dist/jquery.min.js')
+      .pipe(gulp.dest('js'));
+});
+</code></pre>
+            <p>Then, run the task with</p>
+            <pre><code class="sh">gulp copy</code></pre>
+            <p id="done">Done!</p>
+          </section>
+        </section>
+
+        <!-- CONCATENATE -->
+        <section>
+          <h3>gulp.task('concatenate')</h3>
+          <section>
+            <p>Download gulp-concat</p>
+            <pre><code class="sh">npm install --save gulp-concat</code></pre>
+          </section>
+          <section>
+            <p>Copy it to our js folder</p>
+<pre><code data-trim class="js">
+var gulp = require('gulp');
+var concat = require('gulp-concat');
+
+gulp.task('concatenate', function() {
+  gulp.src([
+        'lib/js/head.min.js',
+        'js/reveal.js',
+        'js/jquery.min.js',
+        'js/custom.js'
+      ])
+      .pipe(concat('all.js'))
+      .pipe(gulp.dest('js'));
+});
+</code></pre>
+            <p>Then, run the task with</p>
+            <pre><code class="sh">gulp concatenate</code></pre>
+          </section>
+        </section>
+
+        <!-- MINIFY -->
+        <section>
+          <h3>gulp.task('minify')</h3>
+          <section>
+            <p>Download gulp-uglify</p>
+            <pre><code class="sh">npm install --save gulp-uglify</code></pre>
+          </section>
+          <section>
+            <p>Define the task</p>
+<pre><code data-trim class="js">
+var gulp = require('gulp');
+var minify = require('gulp-uglify');
+
+gulp.task('minify', function() {
+  gulp.src('js/all.js')
+      .pipe(minify())
+      .pipe(gulp.dest('js'));
+});
+</code></pre>
+            <p>Then, run the task with</p>
+            <pre><code class="sh">gulp minify</code></pre>
+          </section>
+        </section>
+
+        <!-- CONCATENATE + MINIFY -->
+        <section>
+          <h3>gulp.task('concatify')</h3>
+          <section>
+            <p>Gulp is a "stream" task runner.</p>
+            <p>You can pipe multiple tasks in together.</p>
+          </section>
+          <section>
+<pre><code data-trim class="js">
+var gulp = require('gulp');
+var concat = require('gulp-concat');
+var minify = require('gulp-uglify');
+
+gulp.task('concatify', function() {
+  gulp.src([
+        'lib/js/head.min.js',
+        'js/reveal.js',
+        'js/jquery.min.js',
+        'js/custom.js'
+      ])
+      .pipe(concat('all.js'))
+      .pipe(minify())
+      .pipe(gulp.dest('js'));
+});
+</code></pre>
+            <pre><code class="sh">gulp concatify</code></pre>
+          </section>
+          <section>
+            <p>Or, define a composite task:</p>
+            <pre><code data-trim class="js">gulp.task('concatify2', ['concatenate', 'minify']);</code></pre>
+          </section>
+        </section>
+
+
       </div>
     </div>
 
@@ -98,5 +212,8 @@
         ]
       });
     </script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/custom.js"></script>
   </body>
 </html>
