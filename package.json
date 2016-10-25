@@ -1,5 +1,5 @@
 {
-  "name": "Web Development Automation",
+  "name": "gulp-presentation",
   "version": "1.0.0",
   "description": "Presentation on automating web dev tasks with gulp",
   "homepage": "https://research.utdallas.edu/oris",
@@ -13,7 +13,6 @@
     "url": "git://github.com/wunc/gulp-presentation.git"
   },
   "devDependencies": {
-    "node-sass": "~3.3.3"
   },
   "license": "MIT"
 }
