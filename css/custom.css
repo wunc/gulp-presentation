@@ -17,6 +17,7 @@
 
 .appear {
   opacity: 0;
+  cursor: pointer;
 }
 
 .appear.show {
