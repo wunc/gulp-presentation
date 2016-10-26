@@ -15,12 +15,12 @@
   background: none;
 }
 
-.appear {
+.down-slide-link {
   opacity: 0;
   cursor: pointer;
 }
 
-.appear.show {
+.down-slide-link.show {
   opacity: 1;
   transition: all 1s ease;
   transition-delay: 1s;
