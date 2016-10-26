@@ -15,6 +15,16 @@
   background: none;
 }
 
+.appear {
+  opacity: 0;
+}
+
+.appear.show {
+  opacity: 1;
+  transition: all 1s ease;
+  transition-delay: 1s;
+}
+
 /*body {
   background-color: #008542;
 }

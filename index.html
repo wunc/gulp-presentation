@@ -70,18 +70,21 @@
             <hr>
             <p>Node Package Manager (NPM)</p>
             <p>Bower</p>
+            <p class="appear"><i class="fa fa-chevron-down"></i></p>
           </section>
           <section>
             <h4>Module Bundlers</h4>
             <hr>
             <p>Webpack</p>
             <p>Browserify</p>
+            <p class="appear"><i class="fa fa-chevron-down"></i></p>
           </section>
           <section>
             <h4>Task Runners</h4>
             <hr>
             <p>Grunt</p>
             <p>Gulp</p>
+            <p class="appear"><i class="fa fa-chevron-down"></i></p>
           </section>
           <section>
             <small><a href="https://stateofjs.com" title="">stateofjs.com (2016 survey)</a></small><br>
@@ -112,6 +115,7 @@
             <p>Download jQuery</p>
             <hr>
             <pre><code class="sh">npm install --save jquery</code></pre>
+            <p class="appear"><i class="fa fa-chevron-down"></i></p>
           </section>
           <section>
             <p>Copy it to our js folder</p>
@@ -137,6 +141,7 @@ gulp.task('copy', function() {
           <section>
             <p>Download gulp-concat</p>
             <pre><code class="sh">npm install --save-dev gulp-concat</code></pre>
+            <p class="appear"><i class="fa fa-chevron-down"></i></p>
           </section>
           <section>
             <p>Copy it to our js folder</p>
@@ -166,6 +171,7 @@ gulp.task('concatenate', function() {
           <section>
             <p>Download gulp-uglify</p>
             <pre><code class="sh">npm install --save-dev gulp-uglify</code></pre>
+            <p class="appear"><i class="fa fa-chevron-down"></i></p>
           </section>
           <section>
             <p>Define the task</p>
@@ -190,6 +196,7 @@ gulp.task('minify', function() {
           <section>
             <p>Gulp is a "stream" task runner.</p>
             <p>You can pipe multiple tasks in together.</p>
+            <p class="appear"><i class="fa fa-chevron-down"></i></p>
           </section>
           <section>
 <pre><code data-trim class="js">
@@ -210,6 +217,7 @@ gulp.task('concatify', function() {
 });
 </code></pre>
             <pre><code class="sh">gulp concatify</code></pre>
+            <p class="appear"><i class="fa fa-chevron-down"></i></p>
           </section>
           <section>
             <p>Or, define a composite task:</p>
@@ -228,6 +236,7 @@ gulp.task('concatify', function() {
           <h3><i class="fa fa-fw fa-eye"></i> gulp.watch()</h3>
           <section>
             <p>Watch for file changes and automatically run a task</p>
+            <p class="appear"><i class="fa fa-chevron-down"></i></p>
           </section>
           <section>
             <p>Define the task</p>
@@ -249,6 +258,7 @@ gulp.task('watch', function() {
             <pre><code class="sh">npm install --save-dev gulp-notify</code></pre>
             <p>Download browser-sync</p>
             <pre><code class="sh">npm install --save-dev browser-sync</code></pre>
+            <p class="appear"><i class="fa fa-chevron-down"></i></p>
           </section>
           <section>
           <p>Send a system notification when the task completes</p>
@@ -268,6 +278,7 @@ gulp.task('concatify', function() {
       .pipe(notify('JS Concatified!'));
 });
 </code></pre>
+            <p class="appear"><i class="fa fa-chevron-down"></i></p>
           </section>
           <section>
           <p>Serve the site &amp; auto-reload the browser when files change</p>
