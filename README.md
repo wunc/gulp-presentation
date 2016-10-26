@@ -6,7 +6,7 @@ This was a presentation that I gave on 10/25/2016 to a user group at [UT Dallas]
 
 ### Viewing Options
 
-- View it [online]({{site.github.url}})
+- View it [online](https://wunc.github.io/gulp-presentation)
 - Clone/download this repository, then open the presentation/index.html file in your browser.
 - Open the [gulp.pdf](gulp.pdf).
 
